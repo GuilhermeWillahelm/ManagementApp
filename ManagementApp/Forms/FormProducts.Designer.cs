@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,23 +39,19 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.listProducts = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(350, 39);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(422, 373);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 96);
+            this.label1.Location = new System.Drawing.Point(32, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 1;
@@ -65,7 +60,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(36, 112);
+            this.txtName.Location = new System.Drawing.Point(35, 115);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(244, 20);
             this.txtName.TabIndex = 2;
@@ -74,7 +69,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 144);
+            this.label2.Location = new System.Drawing.Point(32, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -83,7 +78,7 @@
             // txtBrand
             // 
             this.txtBrand.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBrand.Location = new System.Drawing.Point(36, 160);
+            this.txtBrand.Location = new System.Drawing.Point(35, 163);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(244, 20);
             this.txtBrand.TabIndex = 4;
@@ -92,7 +87,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 193);
+            this.label3.Location = new System.Drawing.Point(32, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 5;
@@ -101,7 +96,7 @@
             // txtPrice
             // 
             this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrice.Location = new System.Drawing.Point(36, 209);
+            this.txtPrice.Location = new System.Drawing.Point(35, 212);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(244, 20);
             this.txtPrice.TabIndex = 6;
@@ -110,7 +105,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 243);
+            this.label4.Location = new System.Drawing.Point(32, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 7;
@@ -119,7 +114,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQuantity.Location = new System.Drawing.Point(36, 260);
+            this.txtQuantity.Location = new System.Drawing.Point(35, 263);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(244, 20);
             this.txtQuantity.TabIndex = 8;
@@ -127,7 +122,7 @@
             // btnRegister
             // 
             this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegister.Location = new System.Drawing.Point(36, 309);
+            this.btnRegister.Location = new System.Drawing.Point(35, 312);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(244, 39);
             this.btnRegister.TabIndex = 9;
@@ -138,7 +133,7 @@
             // txtCod
             // 
             this.txtCod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCod.Location = new System.Drawing.Point(36, 58);
+            this.txtCod.Location = new System.Drawing.Point(35, 61);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(244, 20);
             this.txtCod.TabIndex = 10;
@@ -147,18 +142,61 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 42);
+            this.label5.Location = new System.Drawing.Point(32, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Código do Produto";
+            // 
+            // listProducts
+            // 
+            this.listProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listProducts.GridLines = true;
+            this.listProducts.HideSelection = false;
+            this.listProducts.Location = new System.Drawing.Point(304, 45);
+            this.listProducts.Name = "listProducts";
+            this.listProducts.Size = new System.Drawing.Size(488, 383);
+            this.listProducts.TabIndex = 12;
+            this.listProducts.UseCompatibleStateImageBehavior = false;
+            this.listProducts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Código do Produto";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nome do Produto";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Marca do Produto";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Preço do Produto";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Quantidade";
+            this.columnHeader5.Width = 80;
             // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(843, 462);
+            this.Controls.Add(this.listProducts);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.btnRegister);
@@ -170,7 +208,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
             this.Name = "FormProducts";
             this.Text = "Produtos";
             this.ResumeLayout(false);
@@ -179,8 +216,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
@@ -192,5 +227,11 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView listProducts;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
