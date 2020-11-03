@@ -33,8 +33,10 @@
             this.txtTask = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbUser = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkFg = new System.Windows.Forms.CheckBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTask = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -48,7 +50,7 @@
             this.btnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCadastrar.IconSize = 35;
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(37, 210);
+            this.btnCadastrar.Location = new System.Drawing.Point(37, 265);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCadastrar.Rotation = 0D;
@@ -56,6 +58,7 @@
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label1
             // 
@@ -91,22 +94,24 @@
             // 
             this.cmbUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbUser.FormattingEnabled = true;
+            this.cmbUser.Items.AddRange(new object[] {
+            "Gui"});
             this.cmbUser.Location = new System.Drawing.Point(37, 121);
             this.cmbUser.Name = "cmbUser";
             this.cmbUser.Size = new System.Drawing.Size(261, 21);
             this.cmbUser.TabIndex = 4;
             // 
-            // checkBox1
+            // chkFg
             // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkBox1.Location = new System.Drawing.Point(37, 160);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(107, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Tarefa Finalizada";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkFg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkFg.AutoSize = true;
+            this.chkFg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.chkFg.Location = new System.Drawing.Point(37, 216);
+            this.chkFg.Name = "chkFg";
+            this.chkFg.Size = new System.Drawing.Size(107, 17);
+            this.chkFg.TabIndex = 5;
+            this.chkFg.Text = "Tarefa Finalizada";
+            this.chkFg.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -118,13 +123,33 @@
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(34, 161);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Data de Entrga";
+            // 
+            // dateTask
+            // 
+            this.dateTask.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dateTask.Location = new System.Drawing.Point(37, 177);
+            this.dateTask.Name = "dateTask";
+            this.dateTask.Size = new System.Drawing.Size(200, 20);
+            this.dateTask.TabIndex = 7;
+            // 
             // FormTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 460);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateTask);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkFg);
             this.Controls.Add(this.cmbUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTask);
@@ -144,7 +169,9 @@
         private System.Windows.Forms.TextBox txtTask;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbUser;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkFg;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTask;
     }
 }
