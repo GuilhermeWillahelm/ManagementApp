@@ -21,12 +21,6 @@ namespace ManagementApp.Forms
             LoadProducts();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            product.InsertProduct(int.Parse(txtCod.Text), txtName.Text, txtBrand.Text, double.Parse(txtPrice.Text), int.Parse(txtQuantity.Text));
-            MessageBox.Show(product.msg);
-        }
-
         private void LoadProducts()
         {
             List<ProductModel> products = new List<ProductModel>();
@@ -41,6 +35,27 @@ namespace ManagementApp.Forms
                 item.SubItems.Add(p.quantityProduct.ToString());
                 listProducts.Items.Add(item);
             }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            product.InsertProduct(int.Parse(txtCod.Text), txtName.Text, txtBrand.Text, double.Parse(txtPrice.Text), int.Parse(txtQuantity.Text));
+            MessageBox.Show(product.msg);
+            LoadProducts();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            product.UpdateProduct(int.Parse(txtCod.Text), txtName.Text, txtBrand.Text, double.Parse(txtPrice.Text), int.Parse(txtQuantity.Text));
+            MessageBox.Show(product.msg);
+            LoadProducts();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            product.DeleteProduct(int.Parse(txtCod.Text));
+            MessageBox.Show(product.msg);
+            LoadProducts();
         }
     }
 }

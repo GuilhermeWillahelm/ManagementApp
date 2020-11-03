@@ -56,8 +56,8 @@ namespace ManagementApp.Models
         public void UpdateProduct(int codProd, string nameProd, string brandProd, double priceProd, int quantityProd)
         {
             // Command Sql -- SqlCommand
-            sqlCommand.CommandText = $"update tb_products set values(cdProduct, nameProd, brandProd, priceProd, quantityProd, fg_ok) " +
-                $"values (@cdProduct, @nameProd, @brandProd, @priceProd, @quantityProd, @fg_ok) where idProduct={codProd}";
+            sqlCommand.CommandText = $"update tb_products set cdProduct = @cdProduct, nameProd=@nameProd, brandProd = @brandProd, priceProd = @priceProd," +
+                $"quantityProd = @quantityProd where cdProduct=@cdProduct";
 
             // parameters
             sqlCommand.Parameters.AddWithValue("@cdProduct", codProd);
@@ -65,7 +65,6 @@ namespace ManagementApp.Models
             sqlCommand.Parameters.AddWithValue("@brandProd", brandProd);
             sqlCommand.Parameters.AddWithValue("@priceProd", priceProd);
             sqlCommand.Parameters.AddWithValue("@quantityProd", quantityProd);
-            sqlCommand.Parameters.AddWithValue("@fg_ok", 1);
 
             // connect with data -- Connection
             try
@@ -87,12 +86,40 @@ namespace ManagementApp.Models
             }
         }
 
+        public void DeleteProduct(int codProd)
+        {
+            // Command Sql -- SqlCommand
+            sqlCommand.CommandText = $"update tb_products set fg_ok = 0 where cdProduct = @cdProduct ";
+
+            // parameters
+            sqlCommand.Parameters.AddWithValue("@cdProduct", codProd);
+            sqlCommand.Parameters.AddWithValue("@fg_ok", 0);
+            // connect with data -- Connection
+            try
+            {
+                sqlCommand.Connection = connection.ConnectSql();
+
+                // execute command
+                sqlCommand.ExecuteNonQuery();
+
+                // desconnect
+                connection.desconnect();
+
+                // print massege of erroe or success
+                this.msg = "Excluido com sucesso!";
+            }
+            catch (SqlException e)
+            {
+                this.msg = e.Message + "Erro ao conectar-se ao banco de dados.";
+            }
+        }
+
         public List<ProductModel> SelectProducts()
         {
 
             List<ProductModel> productsList = new List<ProductModel>();
             // Command Sql -- SqlCommand
-            sqlCommand.CommandText = "select * from tb_products";
+            sqlCommand.CommandText = "select cdProduct, nameProd, brandProd, priceProd, quantityProd from tb_products where fg_ok = 1";
 
 
             // connect with data -- Connection
@@ -110,7 +137,6 @@ namespace ManagementApp.Models
                     product.brandProduct = reader["brandProd"].ToString();
                     product.priceProduct = Convert.ToDouble(reader["priceProd"].ToString());
                     product.quantityProduct = Convert.ToInt32(reader["quantityProd"].ToString());
-
                     productsList.Add(product);
 
                     
@@ -118,9 +144,6 @@ namespace ManagementApp.Models
 
                 return productsList;
 
-
-                // print massege of erroe or success
-                this.msg = "Atualizado com sucesso!";
             }
             catch (SqlException e)
             {
