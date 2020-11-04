@@ -98,6 +98,7 @@
     <Compile Include="Forms\FormTasks.Designer.cs">
       <DependentUpon>FormTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountsModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\TasksModel.cs" />
     <Compile Include="Program.cs" />
