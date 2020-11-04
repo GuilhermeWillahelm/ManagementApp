@@ -33,10 +33,15 @@
             this.txtTask = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbUser = new System.Windows.Forms.ComboBox();
-            this.chkFg = new System.Windows.Forms.CheckBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.chkStuacao = new System.Windows.Forms.CheckBox();
+            this.lstTasks = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.dateTask = new System.Windows.Forms.DateTimePicker();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -101,27 +106,55 @@
             this.cmbUser.Size = new System.Drawing.Size(261, 21);
             this.cmbUser.TabIndex = 4;
             // 
-            // chkFg
+            // chkStuacao
             // 
-            this.chkFg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkFg.AutoSize = true;
-            this.chkFg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.chkFg.Location = new System.Drawing.Point(37, 216);
-            this.chkFg.Name = "chkFg";
-            this.chkFg.Size = new System.Drawing.Size(107, 17);
-            this.chkFg.TabIndex = 5;
-            this.chkFg.Text = "Tarefa Finalizada";
-            this.chkFg.UseVisualStyleBackColor = true;
+            this.chkStuacao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkStuacao.AutoSize = true;
+            this.chkStuacao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.chkStuacao.Location = new System.Drawing.Point(37, 216);
+            this.chkStuacao.Name = "chkStuacao";
+            this.chkStuacao.Size = new System.Drawing.Size(107, 17);
+            this.chkStuacao.TabIndex = 5;
+            this.chkStuacao.Text = "Tarefa Finalizada";
+            this.chkStuacao.UseVisualStyleBackColor = true;
+            this.chkStuacao.CheckedChanged += new System.EventHandler(this.chkFg_CheckedChanged);
             // 
-            // listView1
+            // lstTasks
             // 
-            this.listView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(342, 48);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(441, 373);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstTasks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lstTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lstTasks.GridLines = true;
+            this.lstTasks.HideSelection = false;
+            this.lstTasks.Location = new System.Drawing.Point(358, 54);
+            this.lstTasks.Name = "lstTasks";
+            this.lstTasks.Size = new System.Drawing.Size(420, 373);
+            this.lstTasks.TabIndex = 6;
+            this.lstTasks.UseCompatibleStateImageBehavior = false;
+            this.lstTasks.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Descrição Tarefa";
+            this.columnHeader1.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Funcionário";
+            this.columnHeader2.Width = 117;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Data";
+            this.columnHeader3.Width = 106;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Situação";
+            this.columnHeader4.Width = 81;
             // 
             // label3
             // 
@@ -141,15 +174,37 @@
             this.dateTask.Size = new System.Drawing.Size(200, 20);
             this.dateTask.TabIndex = 7;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDelete.IconColor = System.Drawing.Color.Black;
+            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelete.IconSize = 35;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(37, 325);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDelete.Rotation = 0D;
+            this.btnDelete.Size = new System.Drawing.Size(261, 43);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Excluir";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FormTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 460);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTask);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.chkFg);
+            this.Controls.Add(this.lstTasks);
+            this.Controls.Add(this.chkStuacao);
             this.Controls.Add(this.cmbUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTask);
@@ -169,9 +224,14 @@
         private System.Windows.Forms.TextBox txtTask;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbUser;
-        private System.Windows.Forms.CheckBox chkFg;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.CheckBox chkStuacao;
+        private System.Windows.Forms.ListView lstTasks;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTask;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private FontAwesome.Sharp.IconButton btnDelete;
     }
 }
