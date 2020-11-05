@@ -42,8 +42,6 @@ namespace ManagementApp.Forms
                 item.SubItems.Add(sl.dateSale.ToString());
                 listSales.Items.Add(item);
             }
-            
-
         }
     }
 }

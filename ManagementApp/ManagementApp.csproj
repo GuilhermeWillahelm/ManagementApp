@@ -108,6 +108,7 @@
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\SalesModel.cs" />
     <Compile Include="Models\TasksModel.cs" />
+    <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
