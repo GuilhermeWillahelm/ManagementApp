@@ -22,7 +22,7 @@ namespace ManagementApp
         private Form currentChildForm;
 
         //Constructors
-        public FormMainMenu()
+        public FormMainMenu(string user)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -33,6 +33,7 @@ namespace ManagementApp
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            lblName.Text = $"Seja bem vindo: {user}";
         }
         //Structs
         private struct RGBColors
@@ -43,6 +44,7 @@ namespace ManagementApp
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(0, 206, 209);
         }
 
         //Methods
@@ -105,7 +107,7 @@ namespace ManagementApp
         {
             //Stock stock = new Stock();
             //stock.Show();
-            form1 = new FormMainMenu();
+            form1 = new FormMainMenu(null);
             form1.Close();
         }
 
@@ -192,6 +194,12 @@ namespace ManagementApp
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new FormUser());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ManagementApp
 {
     public partial class FormLogin : Form
     {
-        FormMainMenu form = new FormMainMenu();
+        
         public FormLogin()
         {
             InitializeComponent();
@@ -20,10 +20,12 @@ namespace ManagementApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text == "Gui" && txtPass.Text == "123")
+            FormMainMenu form = new FormMainMenu(txtUser.Text);
+            if (txtUser.Text == "Gui" && txtPass.Text == "123")
             {
                 form.Show();
                 this.Hide();
+
             }
         }
     }

@@ -15,10 +15,10 @@ namespace ManagementApp.Models
         public DateTime dateSale { get; set; }
         Connection connection = new Connection();
         SqlCommand sqlCommand = new SqlCommand();
-        List<SalesModel> salesModels = new List<SalesModel>();
+        
         public String msg = "";
 
-        public void InsertAccount(string descSl, int quantitySl, double valueSl, DateTime dateSl)
+        public void InsertSale(string descSl, int quantitySl, double valueSl, DateTime dateSl)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace ManagementApp.Models
                 connection.desconnect();
 
                 //Message
-                this.msg = "Cadastrada com susseco!";
+                this.msg = "Venda cadastrada com sucesso!";
             }
             catch (SqlException e)
             {
@@ -50,11 +50,12 @@ namespace ManagementApp.Models
             }
         }
 
-        public List<SalesModel> SelectAccounts()
+        public List<SalesModel> SelectSales()
         {
-
+            List<SalesModel> salesModels = new List<SalesModel>();
             try
             {
+                
                 // Command Sql -- SqlCommand
                 sqlCommand.CommandText = "select descSale, quantitySale, valueSale, dateSale from tb_sales where fg_ok = 1";
                 // connect with data -- Connection
@@ -68,7 +69,7 @@ namespace ManagementApp.Models
                     sales.descSale = reader["descSale"].ToString();
                     sales.quantitySale = int.Parse(reader["quantitySale"].ToString());
                     sales.valueSale = double.Parse(reader["valueSale"].ToString());
-                    sales.dateSale = DateTime.Parse(reader["dateAccount"].ToString());
+                    sales.dateSale = DateTime.Parse(reader["dateSale"].ToString());
                     salesModels.Add(sales);
                 }
 
@@ -80,7 +81,7 @@ namespace ManagementApp.Models
             return salesModels;
         }
 
-        public void UpdateAccount(string descSl, int quantitySl, double valueSl, DateTime dateSl)
+        public void UpdateASale(string descSl, int quantitySl, double valueSl, DateTime dateSl)
         {
             try
             {
@@ -103,7 +104,7 @@ namespace ManagementApp.Models
                 connection.desconnect();
 
                 // print massege of erroe or success
-                this.msg = "Atualizado com sucesso!";
+                this.msg = "Venda atualizada com sucesso!";
             }
             catch (SqlException e)
             {
@@ -111,7 +112,7 @@ namespace ManagementApp.Models
             }
         }
 
-        public void DeleteAccount(string descAc)
+        public void DeleteSale(string descAc)
         {
             // Command Sql -- SqlCommand
             sqlCommand.CommandText = $"update tb_sales set fg_ok = @fg_ok where descAccount = @descAccount";
@@ -131,7 +132,7 @@ namespace ManagementApp.Models
                 connection.desconnect();
 
                 // print massege of erroe or success
-                this.msg = "Tarefa excluída com sucesso!";
+                this.msg = "Venda excluída com sucesso!";
             }
             catch (SqlException e)
             {

@@ -16,7 +16,6 @@ namespace ManagementApp.Models
 
         Connection connection = new Connection();
         SqlCommand sqlCommand = new SqlCommand();
-        List<AccountsModel> accountsModels = new List<AccountsModel>();
         public String msg = "";
 
         public void InsertAccount(string descAc, double valueAc, DateTime dateAc, string situacaoAc)
@@ -53,7 +52,7 @@ namespace ManagementApp.Models
 
         public List<AccountsModel> SelectAccounts()
         {
-
+            List<AccountsModel> accountsModels = new List<AccountsModel>();
             try
             {
                 // Command Sql -- SqlCommand

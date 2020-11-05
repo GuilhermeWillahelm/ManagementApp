@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnUser = new FontAwesome.Sharp.IconButton();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnAccounts = new FontAwesome.Sharp.IconButton();
             this.btnTask = new FontAwesome.Sharp.IconButton();
@@ -59,6 +60,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btnUser);
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnAccounts);
             this.panelMenu.Controls.Add(this.btnTask);
@@ -72,6 +74,29 @@
             this.panelMenu.Size = new System.Drawing.Size(230, 561);
             this.panelMenu.TabIndex = 3;
             // 
+            // btnUser
+            // 
+            this.btnUser.FlatAppearance.BorderSize = 0;
+            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUser.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnUser.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUser.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnUser.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUser.IconSize = 32;
+            this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUser.Location = new System.Drawing.Point(0, 352);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnUser.Rotation = 0D;
+            this.btnUser.Size = new System.Drawing.Size(220, 38);
+            this.btnUser.TabIndex = 7;
+            this.btnUser.Text = "Usuários";
+            this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            // 
             // btnSettings
             // 
             this.btnSettings.FlatAppearance.BorderSize = 0;
@@ -83,7 +108,7 @@
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 32;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 352);
+            this.btnSettings.Location = new System.Drawing.Point(0, 396);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSettings.Rotation = 0D;
@@ -216,7 +241,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 130);
+            this.panelLogo.Size = new System.Drawing.Size(230, 130);
             this.panelLogo.TabIndex = 0;
             // 
             // btnHome
@@ -240,7 +265,7 @@
             this.panelTitleBar.Controls.Add(this.lblChildTittle);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(818, 75);
             this.panelTitleBar.TabIndex = 4;
@@ -250,7 +275,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblName.Location = new System.Drawing.Point(702, 44);
+            this.lblName.Location = new System.Drawing.Point(548, 42);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(51, 20);
             this.lblName.TabIndex = 5;
@@ -338,7 +363,7 @@
             // 
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 75);
+            this.panelShadow.Location = new System.Drawing.Point(230, 75);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(818, 10);
             this.panelShadow.TabIndex = 5;
@@ -347,16 +372,16 @@
             // 
             this.panelDesktop.Controls.Add(this.pictureBox1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 85);
+            this.panelDesktop.Location = new System.Drawing.Point(230, 85);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(847, 482);
+            this.panelDesktop.Size = new System.Drawing.Size(818, 476);
             this.panelDesktop.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ManagementApp.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 187);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 184);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -411,6 +436,7 @@
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnMaximize;
         private System.Windows.Forms.Label lblName;
+        private FontAwesome.Sharp.IconButton btnUser;
     }
 }
 

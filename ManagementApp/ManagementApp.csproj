@@ -98,8 +98,15 @@
     <Compile Include="Forms\FormTasks.Designer.cs">
       <DependentUpon>FormTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountsModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\SalesModel.cs" />
     <Compile Include="Models\TasksModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTasks.resx">
       <DependentUpon>FormTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -158,6 +158,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(34, 161);
@@ -168,6 +169,7 @@
             // 
             // dateTask
             // 
+            this.dateTask.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTask.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dateTask.Location = new System.Drawing.Point(37, 177);
             this.dateTask.Name = "dateTask";

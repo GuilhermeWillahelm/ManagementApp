@@ -16,7 +16,6 @@ namespace ManagementApp.Models
 
         Connection connection = new Connection();
         SqlCommand sqlCommand = new SqlCommand();
-        List<TasksModel> tasksModels = new List<TasksModel>();
         public String msg = "";
 
         public void InsertTask(string descTask, string funcTask, DateTime dateTask, string situacao)
@@ -53,7 +52,7 @@ namespace ManagementApp.Models
 
         public List<TasksModel> SelectTasks()
         {
-            
+            List<TasksModel> tasksModels = new List<TasksModel>();
             try
             {
                 
